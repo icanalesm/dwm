@@ -6,16 +6,17 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 * notitle
 
 
-## Installing dwm
+## Installation
 
 ```
-git clone git@github.com:icanalesm/dwm.git
+git clone https://github.com/icanalesm/dwm.git
 cd dwm
-sudo make clean install
+make
+sudo make install
 ```
 
 
-## Running dwm
+## Execution
 
 Add the following line at the end of `~/.xinitrc` to start dwm using `startx`:
 ```
@@ -42,7 +43,10 @@ cd siji
 sudo ./install.sh -d /usr/share/fonts/misc/
 ```
 
-In order to get the glyph codes, install `xfd` and execute the `view.sh` script.
+To get the glyph codes, install `xfd` and execute
+```
+./view.sh
+```
 
 ### Key codes
 
