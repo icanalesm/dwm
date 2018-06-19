@@ -9,8 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[] = {
 	"Open Sans:size=10",
-	"-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
-/*	"Wuncon Siji:size=10"*/
+	"Wuncon Siji:size=10"
 };
 static const char dmenufont[] = "Open Sans:size=10";
 
@@ -21,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "\ue010", "\ue011", "\ue012", "\ue013" };
+static const char *tags[] = { " \ue010", " \ue011", " \ue012", " \ue013" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -40,9 +39,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "\ue002",      tile },    /* first entry is default */
-	{ "\ue006",      NULL },    /* no layout function means floating behavior */
-	{ "\ue000",      monocle },
+	{ " \ue002",      tile },    /* first entry is default */
+	{ " \ue006",      NULL },    /* no layout function means floating behavior */
+	{ " \ue000",      monocle },
 };
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
