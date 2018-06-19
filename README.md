@@ -10,6 +10,7 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 ```
 git clone git@github.com:icanalesm/dwm.git
+cd dwm
 sudo make clean install
 ```
 
@@ -24,7 +25,8 @@ exec dwm
 
 ## My customisation (`config.h`)
 
-* [Siji font](https://github.com/stark/siji) for tags and status
+* Fonts
+  - [Siji font](https://github.com/stark/siji) for tags and status
 
 (Requires: xset, bdftopcf, mkfontdir)
 ```
@@ -33,7 +35,7 @@ cd siji
 sudo ./install.sh -d /usr/share/fonts/misc/
 ```
 
-* Open Sans
+  - Open Sans
 
 * Terminal: urxvt
 
