@@ -10,8 +10,6 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 ```
 git clone git@github.com:icanalesm/dwm.git
-git checkout -b mydwm origin/mydwm
-make dwm
 sudo make clean install
 ```
 
@@ -25,8 +23,6 @@ exec dwm
 
 
 ## My customisation (`config.h`)
-
-### Fonts
 
 * [Siji font](https://github.com/stark/siji) for tags and status
 
