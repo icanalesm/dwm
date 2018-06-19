@@ -40,7 +40,7 @@ exec dwm
 ```
 git clone https://github.com/stark/siji.git
 cd siji
-sudo ./install.sh -d /usr/share/fonts/misc/
+sudo ./install.sh -d /usr/share/fonts/misc
 ```
 
 To get the glyph codes, install `xfd` and execute
@@ -50,4 +50,4 @@ To get the glyph codes, install `xfd` and execute
 
 ### Key codes
 
-In order to get the key codes, use `xev`.
+To get the key codes, use `xev`.
