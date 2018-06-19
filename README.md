@@ -27,18 +27,23 @@ exec dwm
 
 * Fonts
   - [Siji font](https://github.com/stark/siji) for tags and status
+  - Open Sans
+* Terminal: urxvt
+* Volume control: amixer
+* Backlight control: scripts in [this repo](https://github.com/icanalesm/openSUSE-installation)
 
-(Requires: xset, bdftopcf, mkfontdir)
+### Install Siji font
+
+(Requires: bdftopcf, mkfontdir, xset)
+
 ```
 git clone https://github.com/stark/siji.git
 cd siji
 sudo ./install.sh -d /usr/share/fonts/misc/
 ```
 
-  - Open Sans
+In order to get the glyph codes, install `xfd` and execute the `view.sh` script.
 
-* Terminal: urxvt
+### Key codes
 
-* Volume control: amixer
-
-* Backlight control: scripts in [this repo](https://github.com/icanalesm/openSUSE-installation)
+In order to get the key codes, use `xev`.
