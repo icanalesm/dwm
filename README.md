@@ -17,7 +17,7 @@ sudo make clean install
 
 ## Running dwm
 
-Add the following line at the end of `.xinitrc` to start dwm using `startx`:
+Add the following line at the end of `~/.xinitrc` to start dwm using `startx`:
 ```
 exec dwm
 ```
@@ -26,7 +26,7 @@ exec dwm
 ## My customisation (`config.h`)
 
 * Fonts
-  - [Siji font](https://github.com/stark/siji) for tags and status
+  - [Siji font](https://github.com/stark/siji) for tags and layout
   - Open Sans
 * Terminal: urxvt
 * Volume control: amixer
