@@ -3,13 +3,14 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappx     = 1;        /* gap pixel between windows */
+/*static const unsigned int gappx     = 1;*/        /* gap pixel between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[] = {
 	"Open Sans:size=10",
-	"Wuncon Siji:size=10"
+	"-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+/*	"Wuncon Siji:size=10"*/
 };
 static const char dmenufont[] = "Open Sans:size=10";
 
@@ -29,11 +30,11 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 4,       0,           -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
