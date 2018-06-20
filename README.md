@@ -32,11 +32,11 @@ exec dwm
 ## My customisation (`config.h`)
 
 * Fonts
-  - [Siji font](https://github.com/stark/siji) for tags and layout
+  - [Siji](https://github.com/stark/siji) for tags and layout
   - Open Sans
 * Terminal: urxvt
 * Volume control: amixer
-* Backlight control: scripts in [this repo](https://github.com/icanalesm/openSUSE-installation)
+* Backlight control: scripts in [my other repo](https://github.com/icanalesm/openSUSE-installation)
 
 ### Install Siji font
 
