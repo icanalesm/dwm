@@ -9,6 +9,8 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 ## Installation
 
+Requirements: libX11, libXft and libXinerama header files.
+
 ```
 git clone https://github.com/icanalesm/dwm.git
 cd dwm
@@ -36,7 +38,7 @@ exec dwm
 
 ### Install Siji font
 
-(Requires: bdftopcf, mkfontdir, xset)
+Requirements: `bdftopcf`, `mkfontdir`, `xset`
 
 ```
 git clone https://github.com/stark/siji.git
