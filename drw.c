@@ -261,8 +261,7 @@ int
 drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert)
 {
 	char buf[1024];
-	int ty;
-	unsigned int ew;
+	int tx, ty;
 	XftDraw *d = NULL;
 	Fnt *usedfont, *curfont, *nextfont;
 	size_t i, len;
@@ -273,6 +272,7 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 	FcPattern *fcpattern;
 	FcPattern *match;
 	XftResult result;
+	XGlyphInfo ext;
 	int charexists = 0;
 
 	if (!drw || (render && !drw->scheme) || !text || !drw->fonts)
@@ -317,10 +317,10 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 		}
 
 		if (utf8strlen) {
-			drw_font_getexts(usedfont, utf8str, utf8strlen, &ew, NULL);
+			XftTextExtentsUtf8(usedfont->dpy, usedfont->xfont, (XftChar8 *)utf8str, utf8strlen, &ext);
 			/* shorten text if necessary */
-			for (len = MIN(utf8strlen, sizeof(buf) - 1); len && ew > w; len--)
-				drw_font_getexts(usedfont, utf8str, len, &ew, NULL);
+			for (len = MIN(utf8strlen, sizeof(buf) - 1); len && ext.xOff > w; len--)
+				XftTextExtentsUtf8(usedfont->dpy, usedfont->xfont, (XftChar8 *)utf8str, len, &ext);
 
 			if (len) {
 				memcpy(buf, utf8str, len);
@@ -330,12 +330,13 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 						; /* NOP */
 
 				if (render) {
-					ty = y + (h - usedfont->h) / 2 + usedfont->xfont->ascent;
+					ty = y + (h / 2) - (usedfont->h / 2) + usedfont->xfont->ascent;
+					tx = x + (ext.xOff - ext.width) / 2;
 					XftDrawStringUtf8(d, &drw->scheme[invert ? ColBg : ColFg],
-					                  usedfont->xfont, x, ty, (XftChar8 *)buf, len);
+					                  usedfont->xfont, tx, ty, (XftChar8 *)buf, len);
 				}
-				x += ew;
-				w -= ew;
+				x += ext.xOff;
+				w -= ext.xOff;
 			}
 		}
 
