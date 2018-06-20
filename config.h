@@ -7,8 +7,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[] = {
-	"Open Sans:size=10",
-	"Wuncon Siji:size=10"
+	"Open Sans:size=8",
+	"Wuncon Siji"
 };
 static const char dmenufont[] = "Open Sans:size=10";
 
