@@ -2,8 +2,9 @@
 
 Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with my patches:
 
-* layoutfirst
-* notitle
+* [layoutfirst](https://github.com/icanalesm/dwm/tree/layoutfirst)
+* [notitle](https://github.com/icanalesm/dwm/tree/notitle)
+* [fixFontExtents](https://github.com/icanalesm/dwm/tree/fixFontExtents)
 
 
 ## Installation
@@ -51,3 +52,4 @@ To get the glyph codes, install `xfd` and execute
 ### Key codes
 
 To get the key codes, use `xev`.
+
