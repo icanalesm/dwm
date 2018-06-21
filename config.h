@@ -7,8 +7,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[] = {
-	"Open Sans:size=8:style=bold",
-	"Wuncon Siji"
+	"Open Sans:size=10:style=bold",
+	"fontawesome:antialias=true"
 };
 static const char dmenufont[] = "Open Sans:size=10";
 
@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "\ue010", "\ue011", "\ue012", "\ue013" };
+static const char *tags[] = { " \uf120 ", " \uf11c ", " \uf269 ", " \uf524 ", " \uf523 ", " \uf526 "  };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -38,9 +38,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "\ue002",      tile },    /* first entry is default */
-	{ "\ue006",      NULL },    /* no layout function means floating behavior */
-	{ "\ue000",      monocle },
+	{ " \uf009 ",      tile },    /* first entry is default */
+	{ " \uf2d2 ",      NULL },    /* no layout function means floating behavior */
+	{ " \uf2d0 ",      monocle },
 };
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -59,7 +59,7 @@ static const char *kbdbrightdeccmd[] = { "sudo", "/usr/local/bin/backlight-kbd",
 static const char *kbdbrightinccmd[] = { "sudo", "/usr/local/bin/backlight-kbd", "up", NULL };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \

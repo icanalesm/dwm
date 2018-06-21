@@ -4,7 +4,6 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 * [layoutfirst](https://github.com/icanalesm/dwm/tree/layoutfirst)
 * [notitle](https://github.com/icanalesm/dwm/tree/notitle)
-* [fixFontExtents](https://github.com/icanalesm/dwm/tree/fixFontExtents)
 
 ![mydwm](img/mydwm.png)
 
@@ -32,26 +31,22 @@ exec dwm
 ## My customisation (`config.h`)
 
 * Fonts
-  - [Siji](https://github.com/stark/siji) for tags and layout
+  - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (tags and layout)
   - Open Sans
 * Terminal: urxvt
 * Volume control: amixer
 * Backlight control: scripts in [my other repo](https://github.com/icanalesm/openSUSE-installation)
 
-### Install Siji font
-
-Requirements: `bdftopcf`, `mkfontdir`, `xset`
+### Install Font Awesome
 
 ```
-git clone https://github.com/stark/siji.git
-cd siji
-sudo ./install.sh -d /usr/share/fonts/misc
+git clone https://github.com/FortAwesome/Font-Awesome.git
+cd Font-Awesome
+sudo cp use-on-desktop/*.otf /usr/share/fonts/truetype
+fc-cache -f
 ```
 
-To get the glyph codes, install `xfd` and execute
-```
-./view.sh
-```
+To get the glyph codes, check [Font Awesome's cheatsheet](https://www.fontawesome.com/cheatsheet)
 
 ### Key codes
 
