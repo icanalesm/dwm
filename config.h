@@ -6,8 +6,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
-	"Open Sans:size=10:style=bold",
-	"fontawesome:antialias=true"
+	"Open Sans:size=10:style=bold:antialias=true",
+	"fontawesome:size=10:antialias=true",
 };
 static const char dmenufont[] = "Open Sans:size=10";
 static const char *colors[][3] = {
@@ -18,7 +18,7 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {
-	" \uf120 ", " \uf11c ", " \uf269 ", " \uf524 ", " \uf523 ", " \uf526 "
+	"\uf120", "\uf11c", " \uf269 ", " \uf524 ", " \uf523 ", " \uf526 "
 };
 
 /* rules */
