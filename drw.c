@@ -330,7 +330,7 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 						; /* NOP */
 
 				if (render) {
-					ty = y + (h / 2) + (ext.y / 2);
+					ty = y + h - (h - ext.y) / 2 - 1;
 					tx = x + (ext.xOff - ext.width) / 2;
 					XftDrawStringUtf8(d, &drw->scheme[invert ? ColBg : ColFg],
 					                  usedfont->xfont, tx, ty, (XftChar8 *)buf, len);
