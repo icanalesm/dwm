@@ -36,7 +36,7 @@ exec dwm
   - Open Sans
 * Terminal: urxvt
 * Volume control: amixer
-* Backlight control: scripts in [my other repo](https://github.com/icanalesm/openSUSE-installation)
+* Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
 
 ### Install Font Awesome
 

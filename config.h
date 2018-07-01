@@ -57,10 +57,10 @@ static const char *cmd_term[]       = { "urxvt", NULL };
 static const char *cmd_voldn[]      = { "amixer", "-q", "set", "Master", "5%-", NULL };
 static const char *cmd_volup[]      = { "amixer", "-q", "set", "Master", "5%+", NULL };
 static const char *cmd_voltg[]      = { "amixer", "-q", "set", "Master", "toggle", NULL };
-static const char *cmd_monlightdn[] = { "sudo", "/usr/local/bin/backlight-screen", "down", NULL };
-static const char *cmd_monlightup[] = { "sudo", "/usr/local/bin/backlight-screen", "up", NULL };
-static const char *cmd_kbdlightdn[] = { "sudo", "/usr/local/bin/backlight-kbd", "down", NULL };
-static const char *cmd_kbdlightup[] = { "sudo", "/usr/local/bin/backlight-kbd", "up", NULL };
+static const char *cmd_monlightdn[] = { "sudo", "brightctl", "screen", "-1", NULL };
+static const char *cmd_monlightup[] = { "sudo", "brightctl", "screen", "+1", NULL };
+static const char *cmd_kbdlightdn[] = { "sudo", "brightctl", "kbd", "-16", NULL };
+static const char *cmd_kbdlightup[] = { "sudo", "brightctl", "kbd", "+16", NULL };
 
 /* key definitions */
 #define MODKEY Mod1Mask
