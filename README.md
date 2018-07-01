@@ -32,24 +32,13 @@ exec dwm
 ## My customisation (`config.h`)
 
 * Fonts
+  - [Open Sans](https://fonts.google.com/specimen/Open+Sans)
   - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (tags and layout)
-  - Open Sans
-* Terminal: urxvt
-* Volume control: amixer
+* Terminal: [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
+* Volume control: [amixer](http://www.alsa-project.org)
 * Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
 
-### Install Font Awesome
-
-```
-git clone https://github.com/FortAwesome/Font-Awesome.git
-cd Font-Awesome
-sudo cp use-on-desktop/*.otf /usr/share/fonts/truetype
-fc-cache -f
-```
-
 To get the glyph codes, check [Font Awesome's cheatsheet](https://www.fontawesome.com/cheatsheet)
-
-### Key codes
 
 To get the key codes, use `xev`.
 
