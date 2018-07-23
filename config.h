@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-#define CLR_NORFG    "#F5F5F5"
-#define CLR_NORBG    "#1F305E"
-#define CLR_NORBO    "#000000"
-#define CLR_SELFG    "#F5F5F5"
-#define CLR_SELBG    "#3C6EB3"
-#define CLR_SELBO    "#F5F5F5"
+#define CLR_NORFG    "#BBBBBB"
+#define CLR_NORBG    "#222222"
+#define CLR_NORBO    "#444444"
+#define CLR_SELFG    "#EEEEEE"
+#define CLR_SELBG    "#005577"
+#define CLR_SELBO    "#EEEEEE"
 #define FNT_SANS     "open sans:size=10"
 #define FNT_MONO     "inconsolata:size=10"
 #define FNT_GLYPH    "fontawesome:size=10"
@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-	"dmenu_run", "-m", dmenumon, "-fn", FNT_MONO, "-nb", CLR_NORBG,
+	"dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_NORBG,
 	"-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
 };
 static const char *cmd_term[] = {
