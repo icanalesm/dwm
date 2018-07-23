@@ -1,19 +1,28 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+#define CLR_NORFG    "#F5F5F5"
+#define CLR_NORBG    "#1F305E"
+#define CLR_NORBO    "#000000"
+#define CLR_SELFG    "#F5F5F5"
+#define CLR_SELBG    "#3C6EB3"
+#define CLR_SELBO    "#F5F5F5"
+#define FNT_SANS     "open sans:size=10"
+#define FNT_MONO     "inconsolata:size=10"
+#define FNT_GLYPH    "fontawesome:size=10"
+
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
-	"Open Sans:size=10:style=bold:antialias=true",
-	"fontawesome:size=10:antialias=true",
+	FNT_SANS,
+	FNT_GLYPH,
 };
-static const char dmenufont[] = "Open Sans:size=10";
 static const char *colors[][3] = {
 	/*               foreground  background  border   */
-	[SchemeNorm] = { "#f5f5f5",  "#2f2d38",  "#2f2d38" },
-	[SchemeSel]  = { "#f5f5f5",  "#8b97b1",  "#8b97b1" },
+	[SchemeNorm] = { CLR_NORFG,  CLR_NORBG,  CLR_NORBO },
+	[SchemeSel]  = { CLR_SELFG,  CLR_SELBG,  CLR_SELBO },
 };
 
 /* tagging */
@@ -28,7 +37,6 @@ static const char *tags[] = {
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask   isfloat   monitor */
-	{ "Firefox",  NULL,       "Library",  TAG_WEB,    1,        -1 },
 	{ "Firefox",  NULL,       NULL,       TAG_WEB,    0,        -1 },
 };
 
@@ -38,10 +46,10 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ " \uf009 ",      tile },    /* first entry is default */
-	{ " \uf2d2 ",      NULL },    /* no layout function means floating behavior */
-	{ " \uf2d0 ",      monocle },
+	/* symbol      arrange function */
+	{ " \uf009 ",  tile },    /* first entry is default */
+	{ " \uf2d2 ",  NULL },    /* no layout function means floating behavior */
+	{ " \uf2d0 ",  monocle },
 };
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -50,20 +58,36 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-	"dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#181818", "-nf",
-	"#887e75", "-sb", "#0f0f0f", "-sf", "#d6b89c", NULL
+	"dmenu_run", "-m", dmenumon, "-fn", FNT_MONO, "-nb", CLR_NORBG,
+	"-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
 };
-static const char *cmd_term[]       = { "urxvt", NULL };
-static const char *cmd_voldn[]      = { "amixer", "-q", "set", "Master", "5%-", NULL };
-static const char *cmd_volup[]      = { "amixer", "-q", "set", "Master", "5%+", NULL };
-static const char *cmd_voltg[]      = { "amixer", "-q", "set", "Master", "toggle", NULL };
-static const char *cmd_monlightdn[] = { "sudo", "/usr/local/bin/brightctl", "screen", "-1", NULL };
-static const char *cmd_monlightup[] = { "sudo", "/usr/local/bin/brightctl", "screen", "+1", NULL };
-static const char *cmd_kbdlightdn[] = { "sudo", "/usr/local/bin/brightctl", "kbd", "-16", NULL };
-static const char *cmd_kbdlightup[] = { "sudo", "/usr/local/bin/brightctl", "kbd", "+16", NULL };
+static const char *cmd_term[] = {
+	"urxvt", NULL
+};
+static const char *cmd_voldn[] = {
+	"amixer", "-q", "set", "Master", "5%-", NULL
+};
+static const char *cmd_volup[] = {
+	"amixer", "-q", "set", "Master", "5%+", NULL
+};
+static const char *cmd_voltg[] = {
+	"amixer", "-q", "set", "Master", "toggle", NULL
+};
+static const char *cmd_monlightdn[] = {
+	"sudo", "/usr/local/bin/brightctl", "screen", "-1", NULL
+};
+static const char *cmd_monlightup[] = {
+	"sudo", "/usr/local/bin/brightctl", "screen", "+1", NULL
+};
+static const char *cmd_kbdlightdn[] = {
+	"sudo", "/usr/local/bin/brightctl", "kbd", "-16", NULL
+};
+static const char *cmd_kbdlightup[] = {
+	"sudo", "/usr/local/bin/brightctl", "kbd", "+16", NULL
+};
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
