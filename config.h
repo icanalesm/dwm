@@ -27,17 +27,16 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {
-	"\uf120", "\uf11c", " \uf269 ", " \uf524 ", " \uf523 ", " \uf526 "
+	"\uf120", "\uf120", " \uf269", " \uf0c3", " \uf544", " \uf135"
 };
 
 /* rules */
 #define TAG_TERM    1 << 0
-#define TAG_WORK    1 << 1
-#define TAG_WEB     1 << 2
+#define TAG_FFOX    1 << 2
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask   isfloat   monitor */
-	{ "Firefox",  NULL,       NULL,       TAG_WEB,    0,        -1 },
+	{ "Firefox",  NULL,       NULL,       TAG_FFOX,   0,        -1 },
 };
 
 /* layout(s) */
