@@ -27,7 +27,7 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {
-	"\uf120", "\uf120", " \uf269", " \uf0c3", " \uf544", " \uf135"
+	"\uf120", " \uf121", " \uf269", " \uf544", " \uf135"
 };
 
 /* rules */
@@ -132,7 +132,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_3,                                   2)
 	TAGKEYS(                        XK_4,                                   3)
 	TAGKEYS(                        XK_5,                                   4)
-	TAGKEYS(                        XK_6,                                   5)
 	/* window manipulation */
 	{ MODKEY,                       XK_i,                   incnmaster,     {.i = +1} },
 	{ MODKEY,                       XK_d,                   incnmaster,     {.i = -1} },
