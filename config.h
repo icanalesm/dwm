@@ -27,7 +27,7 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {
-	"\uf120", " \uf121", " \uf269", " \uf544", " \uf135"
+	"\uf120", "\uf121", "\uf269", "\uf544", "\uf135"
 };
 
 /* rules */
@@ -46,9 +46,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol      arrange function */
-	{ " \uf009 ",  tile },    /* first entry is default */
-	{ " \uf2d2 ",  NULL },    /* no layout function means floating behavior */
-	{ " \uf2d0 ",  monocle },
+	{ "\uf009",  tile },    /* first entry is default */
+	{ "\uf2d2",  NULL },    /* no layout function means floating behavior */
+	{ "\uf2d0",  monocle },
 };
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
