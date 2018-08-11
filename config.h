@@ -84,6 +84,9 @@ static const char *cmd_kbdlightdn[] = {
 static const char *cmd_kbdlightup[] = {
 	"sudo", "/usr/local/bin/brightctl", "kbd", "+16", NULL
 };
+static const char *cmd_status[] = {
+	"/usr/local/bin/tstat", "set", NULL
+};
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -117,6 +120,8 @@ static Key keys[] = {
 	{ 0,                            XF86KbdBrightnessUp,    spawn,          {.v = cmd_kbdlightup} },
 	/* bar */
 	{ MODKEY,                       XK_b,                   togglebar,      {0} },
+	/* status bar */
+	{ MODKEY|ShiftMask,             XK_b,                   spawn,          {.v = cmd_status } },
 	/* layouts */
 	{ MODKEY,                       XK_t,                   setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                   setlayout,      {.v = &layouts[1]} },

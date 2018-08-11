@@ -39,6 +39,7 @@ exec dwm
 * Terminal: [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
 * Volume control: [amixer](http://www.alsa-project.org)
 * Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
+* Status: [tstat](https://github.com/icanalesm/tstat)
 
 To get the glyph codes, check [Font Awesome's cheatsheet](https://www.fontawesome.com/cheatsheet)
 
