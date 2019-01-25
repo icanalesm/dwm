@@ -7,8 +7,8 @@
 #define CLR_SELFG    "#EEEEEE"
 #define CLR_SELBG    "#005577"
 #define CLR_SELBO    "#EEEEEE"
-#define FNT_SANS     "open sans:size=10"
-#define FNT_MONO     "inconsolata:size=10"
+#define FNT_SANS     "sans:size=10"
+#define FNT_MONO     "monospace:size=10"
 #define FNT_GLYPH    "fontawesome:size=10"
 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
