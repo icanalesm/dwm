@@ -61,7 +61,7 @@ static const char *dmenucmd[] = {
 	"-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
 };
 static const char *cmd_term[] = {
-	"urxvt", NULL
+	"urxvtc", NULL
 };
 static const char *cmd_voldn[] = {
 	"amixer", "-q", "set", "Master", "5%-", NULL
