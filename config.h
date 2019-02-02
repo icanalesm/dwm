@@ -89,6 +89,12 @@ static const char *cmd_kbdlightup[] = {
 static const char *cmd_status[] = {
 	"/usr/local/bin/tstat", "set", NULL
 };
+static const char *cmd_scrshot[] = {
+	"/home/isaac/.scripts/scrshot", NULL
+};
+static const char *cmd_winshot[] = {
+	"/home/isaac/.scripts/scrshot", "window", NULL
+};
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -110,6 +116,8 @@ static Key keys[] = {
 	/* applications */
 	{ MODKEY,                       XK_space,               spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,              spawn,          {.v = cmd_term } },
+	{ MODKEY|ShiftMask,             XK_s,                   spawn,          {.v = cmd_scrshot } },
+	{ MODKEY|ShiftMask,             XK_w,                   spawn,          {.v = cmd_winshot } },
 	/* volume control */
 	{ 0,                            XF86AudioMute,          spawn,          {.v = cmd_voltg} },
 	{ 0,                            XF86AudioLowerVolume,   spawn,          {.v = cmd_voldn} },
