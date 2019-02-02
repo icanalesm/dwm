@@ -38,7 +38,6 @@ My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the files for
 In `config.h`:
 
 * Fonts
-  - Default sans font: [IBM Plex Sans](https://github.com/IBM/plex)
   - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 * Terminal: [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
 * Volume control: [amixer](http://www.alsa-project.org)
