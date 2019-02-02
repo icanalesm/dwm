@@ -432,18 +432,20 @@ buttonpress(XEvent *e)
 	if (ev->window == selmon->barwin) {
 		i = 0;
 		x = blw;
-		do
-			x += TEXTW(tags[i]);
-		while (ev->x >= x && ++i < LENGTH(tags));
-		if (ev->x < blw)
+		if (ev->x < x) {
 			click = ClkLtSymbol;
-		else if (i < LENGTH(tags)) {
-			click = ClkTagBar;
-			arg.ui = 1 << i;
-		} else if (ev->x > selmon->ww - TEXTW(stext))
-			click = ClkStatusText;
-		else
-			click = ClkWinTitle;
+		} else {
+			do
+				x += TEXTW(tags[i]);
+			while (ev->x >= x && ++i < LENGTH(tags));
+			if (i < LENGTH(tags)) {
+				click = ClkTagBar;
+				arg.ui = 1 << i;
+			} else if (ev->x > selmon->ww - TEXTW(stext))
+				click = ClkStatusText;
+			else
+				click = ClkWinTitle;
+		}
 	} else if ((c = wintoclient(ev->window))) {
 		focus(c);
 		restack(selmon);
