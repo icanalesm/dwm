@@ -43,15 +43,21 @@ In `config.h`:
 * Volume control: [amixer](http://www.alsa-project.org)
 * Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
 * Status: [tstat](https://github.com/icanalesm/tstat)
-* Screenshots: [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot)
+* Screenshots: [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
 
-The [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) requires [ImageMagick](https://www.imagemagick.org/).
-
-To get Font Awesome's glyph codes, check the [cheatsheet](https://www.fontawesome.com/cheatsheet).
-
-Useful tools for configration:
+Useful tools for configuration:
 
 * `xev` to get the key codes for multimedia keys.
 * `xfontsel` to get the name of fonts.
 * `xfd` to get the unicode code of characters.
 * `xprop` to get properties of clients for [dwm rules](https://dwm.suckless.org/customisation/rules).
+
+To get Font Awesome's glyph codes, check the [cheatsheet](https://www.fontawesome.com/cheatsheet).
+
+Notice that `tstat` only sets (or prints to std) the status and it finishes. I manually update the status by pressing `MODKEY`+`ctrl`+`b` when I need it. For automatic update, `tstat` can be put in a shell script:
+```
+while true; do
+	tstat set
+	sleep 1
+done
+```
