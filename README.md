@@ -31,17 +31,28 @@ exec dwm
 ```
 
 
-## My customisation (`config.h`)
+## My customisation
+
+My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the files for setting colors, default fonts and my `.xinitrc` file.
+
+In `config.h`:
 
 * Fonts
-  - [Open Sans](https://fonts.google.com/specimen/Open+Sans)
-  - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (tags and layout)
-* Terminal: [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
+  - Default sans font: [IBM Plex Sans](https://github.com/IBM/plex)
+  - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
+* Terminal: [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
 * Volume control: [amixer](http://www.alsa-project.org)
 * Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
 * Status: [tstat](https://github.com/icanalesm/tstat)
+* Screenshots: [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot)
 
-To get the glyph codes, check [Font Awesome's cheatsheet](https://www.fontawesome.com/cheatsheet)
+The [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) requires [ImageMagick](https://www.imagemagick.org/).
 
-To get the key codes, use `xev`.
+To get Font Awesome's glyph codes, check the [cheatsheet](https://www.fontawesome.com/cheatsheet).
 
+Useful tools for configration:
+
+* `xev` to get the key codes for multimedia keys.
+* `xfontsel` to get the name of fonts.
+* `xfd` to get the unicode code of characters.
+* `xprop` to get properties of clients for [dwm rules](https://dwm.suckless.org/customisation/rules).
