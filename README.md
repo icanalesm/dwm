@@ -54,7 +54,7 @@ Useful tools for configuration:
 
 To get Font Awesome's glyph codes, check the [cheatsheet](https://www.fontawesome.com/cheatsheet).
 
-Notice that `tstat` only sets (or prints to std) the status and it finishes. I manually update the status by pressing `MODKEY`+`ctrl`+`b` when I need it. For automatic update, `tstat` can be put in a shell script:
+Notice that `tstat` only sets (or prints to std) the status and it finishes. I manually update the status by pressing `MODKEY`+`shift`+`b` when I need it. To automatically update the status, `tstat` can be put in a shell script:
 ```
 while true; do
 	tstat set
