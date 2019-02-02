@@ -9,7 +9,7 @@
 #define CLR_SELBO    "#EEEEEE"
 #define FNT_SANS     "sans:size=10"
 #define FNT_MONO     "monospace:size=10"
-#define FNT_GLYPH    "fontawesome:size=10"
+#define FNT_GLYPH    "Font Awesome 5 Free:size=10"
 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
