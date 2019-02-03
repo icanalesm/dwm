@@ -39,11 +39,13 @@ In `config.h`:
 
 * Fonts
   - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
-* Terminal: [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
-* Volume control: [amixer](http://www.alsa-project.org)
-* Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
-* Status: [tstat](https://github.com/icanalesm/tstat)
-* Screenshots: [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
+* Key bindings
+  - `dmenu`: [my fork of dmenu](https://github.com/icanalesm/dmenu)
+  - Terminal: [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
+  - Volume control: [amixer](http://www.alsa-project.org)
+  - Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
+  - Status: [tstat](https://github.com/icanalesm/tstat)
+  - Screenshots: [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
 
 Useful tools for configuration:
 
