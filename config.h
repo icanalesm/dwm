@@ -26,12 +26,12 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {
-	"\uf120", "\uf121", "\uf269", "\uf544", "\uf135"
+	"\uf120", "\uf269", "\uf544", "\uf135"
 };
 
 /* rules */
 #define TAG_TERM    1 << 0
-#define TAG_FFOX    1 << 2
+#define TAG_FFOX    1 << 1
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask   isfloat   monitor */
