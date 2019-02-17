@@ -65,13 +65,13 @@ static const char *cmd_term[] = {
 	"st", NULL
 };
 static const char *cmd_voldn[] = {
-	"amixer", "-q", "set", "Master", "5%-", NULL
+	"/usr/local/bin/tstatr", "vol", "down", NULL
 };
 static const char *cmd_volup[] = {
-	"amixer", "-q", "set", "Master", "5%+", NULL
+	"/usr/local/bin/tstatr", "vol", "up", NULL
 };
 static const char *cmd_voltg[] = {
-	"amixer", "-q", "set", "Master", "toggle", NULL
+	"/usr/local/bin/tstatr", "vol", "toggle", NULL
 };
 static const char *cmd_monlightdn[] = {
 	"sudo", "/usr/local/bin/brightctl", "screen", "-1", NULL
