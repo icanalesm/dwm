@@ -4,7 +4,6 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 * [layoutfirst](https://github.com/icanalesm/dwm/tree/layoutfirst)
 * [notitle](https://github.com/icanalesm/dwm/tree/notitle)
-* [fixFontExtents](https://github.com/icanalesm/dwm/tree/fixFontExtents)
 
 ![mydwm](img/mydwm.png)
 
@@ -33,19 +32,19 @@ exec dwm
 
 ## My customisation
 
-My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the files for setting colors, default fonts and my `.xinitrc` file.
+My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the scripts used in `config.h`, files for setting terminal colors, default fonts and my `.xinitrc` file, among other thing.
 
 In `config.h`:
 
 * Fonts
-  - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
+  - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (to get the glyph codes, check the [cheatsheet](https://www.fontawesome.com/cheatsheet))
 * Key bindings
   - `dmenu`: [my fork of dmenu](https://github.com/icanalesm/dmenu)
-  - Terminal: [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
-  - Volume control: [amixer](http://www.alsa-project.org)
+  - Terminal: [my fork of st](https://github.com/icanalesm/st)
+  - Volume control: [amixer](http://www.alsa-project.org) via [my script](https://github.com/icanalesm/dotfiles/blob/master/scripts/statctl)
   - Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
   - Status: [tstat](https://github.com/icanalesm/tstat)
-  - Screenshots: [screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
+  - Screenshots: [my screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
 
 Useful tools for configuration:
 
@@ -54,9 +53,7 @@ Useful tools for configuration:
 * `xfd` to get the unicode code of characters.
 * `xprop` to get properties of clients for [dwm rules](https://dwm.suckless.org/customisation/rules).
 
-To get Font Awesome's glyph codes, check the [cheatsheet](https://www.fontawesome.com/cheatsheet).
-
-Notice that `tstat` only sets (or prints to std) the status and it finishes. I manually update the status by pressing `MODKEY`+`shift`+`b` when I need it. To automatically update the status, `tstat` can be put in a shell script:
+Notice that `tstat` only sets (or prints to std) the status and it finishes. I manually update the status by pressing `MODKEY`+`Shift`+`b` when I need it. To automatically update the status, `tstat` can be put in a shell script:
 ```
 while true; do
 	tstat set
