@@ -64,20 +64,8 @@ static const char *dmenucmd[] = {
 static const char *cmd_term[] = {
 	"st", NULL
 };
-static const char *cmd_voldn[] = {
-	"/usr/local/bin/tstatr", "vol", "down", NULL
-};
-static const char *cmd_volup[] = {
-	"/usr/local/bin/tstatr", "vol", "up", NULL
-};
-static const char *cmd_voltg[] = {
-	"/usr/local/bin/tstatr", "vol", "toggle", NULL
-};
-static const char *cmd_monlightdn[] = {
-	"sudo", "/usr/local/bin/brightctl", "screen", "-1", NULL
-};
-static const char *cmd_monlightup[] = {
-	"sudo", "/usr/local/bin/brightctl", "screen", "+1", NULL
+static const char *cmd_status[] = {
+	"/usr/local/bin/tstat", "set", NULL
 };
 static const char *cmd_kbdlightdn[] = {
 	"sudo", "/usr/local/bin/brightctl", "kbd", "-16", NULL
@@ -85,8 +73,23 @@ static const char *cmd_kbdlightdn[] = {
 static const char *cmd_kbdlightup[] = {
 	"sudo", "/usr/local/bin/brightctl", "kbd", "+16", NULL
 };
-static const char *cmd_status[] = {
-	"/usr/local/bin/tstat", "set", NULL
+static const char *cmd_monlightdn[] = {
+	"sudo", "/usr/local/bin/brightctl", "screen", "-1", NULL
+};
+static const char *cmd_monlightup[] = {
+	"sudo", "/usr/local/bin/brightctl", "screen", "+1", NULL
+};
+static const char *cmd_multmon[] = {
+	"/home/isaac/.scripts/monctl", NULL
+};
+static const char *cmd_voldn[] = {
+	"/home/isaac/.scripts/statctl", "vol", "down", NULL
+};
+static const char *cmd_volup[] = {
+	"/home/isaac/.scripts/statctl", "vol", "up", NULL
+};
+static const char *cmd_voltg[] = {
+	"/home/isaac/.scripts/statctl", "vol", "toggle", NULL
 };
 static const char *cmd_scrshot[] = {
 	"/home/isaac/.scripts/scrshot", NULL
@@ -109,6 +112,7 @@ static const char *cmd_winshot[] = {
 #define XF86AudioRaiseVolume     0x1008ff13
 #define XF86KbdBrightnessDown    0x1008ff06
 #define XF86KbdBrightnessUp      0x1008ff05
+#define XF86LaunchA              0x1008ff4a
 
 static Key keys[] = {
 	/* modifier                     key                     function        argument */
@@ -117,6 +121,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,              spawn,          {.v = cmd_term } },
 	{ MODKEY|ShiftMask,             XK_s,                   spawn,          {.v = cmd_scrshot } },
 	{ MODKEY|ShiftMask,             XK_w,                   spawn,          {.v = cmd_winshot } },
+	{ 0,                            XF86LaunchA,            spawn,          {.v = cmd_multmon } },
 	/* volume control */
 	{ 0,                            XF86AudioMute,          spawn,          {.v = cmd_voltg} },
 	{ 0,                            XF86AudioLowerVolume,   spawn,          {.v = cmd_voldn} },
