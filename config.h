@@ -6,7 +6,7 @@
 #define CLR_NORBO    "#444444"
 #define CLR_SELFG    "#EEEEEE"
 #define CLR_SELBG    "#005577"
-#define CLR_SELBO    "#EEEEEE"
+#define CLR_SELBO    "#005577"
 #define FNT_SANS     "sans:size=10"
 #define FNT_GLYPH    "Font Awesome 5 Free:size=10"
 
