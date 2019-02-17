@@ -32,7 +32,7 @@ exec dwm
 
 ## My customisation
 
-My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the scripts used in `config.h`, files for setting terminal colors, default fonts and my `.xinitrc` file, among other thing.
+My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the scripts used in `config.h`, files for setting terminal colors, default fonts and my `.xinitrc` file, among other things.
 
 In `config.h`:
 
@@ -53,7 +53,7 @@ Useful tools for configuration:
 * `xfd` to get the unicode code of characters.
 * `xprop` to get properties of clients for [dwm rules](https://dwm.suckless.org/customisation/rules).
 
-Notice that `tstat` only sets (or prints to std) the status and it finishes. I manually update the status by pressing `MODKEY`+`Shift`+`b` when I need it. To automatically update the status, `tstat` can be put in a shell script:
+Notice that `tstat` only sets (or prints to stdout) the status and it finishes. I manually update the status by pressing `MODKEY`+`Shift`+`b` when I need it. To automatically update the status, `tstat` can be put in a shell script:
 ```
 while true; do
 	tstat set
