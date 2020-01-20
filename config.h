@@ -68,28 +68,28 @@ static const char *cmd_status[] = {
 	"/usr/local/bin/tstat", "set", NULL
 };
 static const char *cmd_kbdlightdn[] = {
-	"sudo", "/usr/local/bin/brightctl", "kbd", "-16", NULL
+	"/home/isaac/.scripts/uictl", "kbdbright", "down", NULL
 };
 static const char *cmd_kbdlightup[] = {
-	"sudo", "/usr/local/bin/brightctl", "kbd", "+16", NULL
+	"/home/isaac/.scripts/uictl", "kbdbright", "up", NULL
 };
 static const char *cmd_monlightdn[] = {
-	"sudo", "/usr/local/bin/brightctl", "screen", "-1", NULL
+	"/home/isaac/.scripts/uictl", "monbright", "down", NULL
 };
 static const char *cmd_monlightup[] = {
-	"sudo", "/usr/local/bin/brightctl", "screen", "+1", NULL
+	"/home/isaac/.scripts/uictl", "monbright", "up", NULL
 };
 static const char *cmd_multmon[] = {
 	"/home/isaac/.scripts/monctl", NULL
 };
 static const char *cmd_voldn[] = {
-	"/home/isaac/.scripts/statctl", "vol", "down", NULL
+	"/home/isaac/.scripts/uictl", "volume", "down", NULL
 };
 static const char *cmd_volup[] = {
-	"/home/isaac/.scripts/statctl", "vol", "up", NULL
+	"/home/isaac/.scripts/uictl", "volume", "up", NULL
 };
 static const char *cmd_voltg[] = {
-	"/home/isaac/.scripts/statctl", "vol", "toggle", NULL
+	"/home/isaac/.scripts/uictl", "volume", "toggle", NULL
 };
 static const char *cmd_scrshot[] = {
 	"/home/isaac/.scripts/scrshot", NULL
