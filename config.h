@@ -35,9 +35,9 @@ static const char *tags[] = {
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask   isfloat   monitor */
-	{ "Firefox",  NULL,       NULL,       TAG_FFOX,   0,        -1 },
-	{ "Firefox",  NULL,       "Library",  TAG_FFOX,   1,        -1 },
-	{ "Firefox",  NULL,       "About"  ,  TAG_FFOX,   1,        -1 },
+	{ "firefox",  NULL,       NULL,       TAG_FFOX,   0,        -1 },
+	{ "firefox",  NULL,       "Library",  TAG_FFOX,   1,        -1 },
+	{ "firefox",  NULL,       "About"  ,  TAG_FFOX,   1,        -1 },
 };
 
 /* layout(s) */
