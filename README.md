@@ -41,10 +41,11 @@ In `config.h`:
 * Key bindings
   - `dmenu`: [my fork of dmenu](https://github.com/icanalesm/dmenu)
   - Terminal: [my fork of st](https://github.com/icanalesm/st)
-  - Volume control: [amixer](http://www.alsa-project.org) via [my script](https://github.com/icanalesm/dotfiles/blob/master/scripts/statctl)
-  - Backlight control: [brightctl](https://github.com/icanalesm/brightctl)
-  - Status: [tstat](https://github.com/icanalesm/tstat)
-  - Screenshots: [my screenshot script](https://github.com/icanalesm/dotfiles/blob/master/scripts/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
+  - Volume control: [amixer](http://www.alsa-project.org) via [uictl](https://github.com/icanalesm/uictl)
+  - Backlight control: [brightctl](https://github.com/icanalesm/brightctl) via [uictl](https://github.com/icanalesm/uictl)
+  - Status: [tstat](https://github.com/icanalesm/tstat) via [uictl](https://github.com/icanalesm/uictl)
+  - Screenshots: [my script](https://github.com/icanalesm/dotfiles/blob/master/.local/bin/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
+  - Monitor configuration: [my script](https://github.com/icanalesm/dotfiles/blob/master/.local/bin/monctl)
 
 Useful tools for configuration:
 
@@ -53,7 +54,7 @@ Useful tools for configuration:
 * `xfd` to get the unicode code of characters.
 * `xprop` to get properties of clients for [dwm rules](https://dwm.suckless.org/customisation/rules).
 
-Notice that `tstat` only sets (or prints to stdout) the status and it finishes. I manually update the status by pressing `MODKEY`+`Shift`+`b` when I need it. To automatically update the status, `tstat` can be put in a shell script:
+Notice that `tstat` only sets or prints to stdout the status. I manually update the status bar by pressing `MODKEY`+`Shift`+`b`. To automatically update the status, `tstat` can be put in a shell script:
 ```
 while true; do
 	tstat set
