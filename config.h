@@ -62,7 +62,7 @@ static const char *dmenucmd[] = {
 	"-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
 };
 static const char *cmd_term[] = {
-	"st", NULL
+	"st", "-e", "/bin/sh", NULL
 };
 static const char *cmd_status[] = {
 	"tstat", "set", NULL
