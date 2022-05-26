@@ -26,18 +26,24 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {
-	"\uf120", "\uf269", "\uf544", "\uf135"
+	"\uf120", "\uf269", "\uf544", "\uf135", "\uf11b", "\uf1b6"
 };
 
 /* rules */
 #define TAG_TERM    1 << 0
 #define TAG_FFOX    1 << 1
+#define TAG_GAME    1 << 4
+#define TAG_STEAM   1 << 5
 
 static const Rule rules[] = {
-	/* class      instance    title       tags mask   isfloat   monitor */
-	{ "firefox",  NULL,       NULL,       TAG_FFOX,   0,        -1 },
-	{ "firefox",  NULL,       "Library",  TAG_FFOX,   1,        -1 },
-	{ "firefox",  NULL,       "About"  ,  TAG_FFOX,   1,        -1 },
+	/* class        instance    title            tags mask   isfloat   monitor */
+	{ "firefox",    NULL,       NULL,            TAG_FFOX,   0,        -1 },
+	{ "firefox",    NULL,       "Library",       TAG_FFOX,   1,        -1 },
+	{ "firefox",    NULL,       "About"  ,       TAG_FFOX,   1,        -1 },
+	{ "retroarch",  NULL,       NULL,            TAG_GAME,   0,        -1 },
+	{ "Steam",      NULL,       NULL,            TAG_STEAM,  0,        -1 },
+	{ "Steam",      NULL,       "Steam Login",   TAG_STEAM,  1,        -1 },
+	{ "Steam",      NULL,       "Friends List",  TAG_STEAM,  1,        -1 },
 };
 
 /* layout(s) */
@@ -152,6 +158,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_3,                                   2)
 	TAGKEYS(                        XK_4,                                   3)
 	TAGKEYS(                        XK_5,                                   4)
+	TAGKEYS(                        XK_6,                                   5)
 	/* window manipulation */
 	{ MODKEY,                       XK_i,                   incnmaster,     {.i = +1} },
 	{ MODKEY,                       XK_d,                   incnmaster,     {.i = -1} },
