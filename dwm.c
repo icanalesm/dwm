@@ -434,7 +434,7 @@ buttonpress(XEvent *e)
 	}
 	if (ev->window == selmon->barwin) {
 		i = 0;
-		x = blw;
+		x = TEXTW(selmon->ltsymbol);
 		if (ev->x < x) {
 			click = ClkLtSymbol;
 		} else {
@@ -725,7 +725,7 @@ drawbar(Monitor *m)
 	}
 
 	x = 0;
-	w = blw = TEXTW(m->ltsymbol);
+	w = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 	for (i = 0; i < LENGTH(tags); i++) {
