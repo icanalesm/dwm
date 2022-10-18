@@ -43,6 +43,7 @@ static const Rule rules[] = {
 	{ "retroarch",  NULL,       NULL,            TAG_GAME,   0,        -1 },
 	{ "Steam",      NULL,       NULL,            TAG_STEAM,  0,        -1 },
 	{ "Steam",      NULL,       "Steam Login",   TAG_STEAM,  1,        -1 },
+	{ "Steam",      NULL,       "Steam - News",  TAG_STEAM,  1,        -1 },
 	{ "Steam",      NULL,       "Friends List",  TAG_STEAM,  1,        -1 },
 };
 
