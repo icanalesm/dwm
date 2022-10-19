@@ -64,10 +64,9 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-	"dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_NORBG,
-	"-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
+	"dmenu_run", "-fn", FNT_SANS, "-nb", CLR_NORBG, "-nf", CLR_NORFG,
+	"-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
 };
 static const char *cmd_term[] = {
 	"st", "-e", "/bin/sh", NULL
@@ -122,7 +121,7 @@ static const char *cmd_winshot[] = {
 #define XF86KbdBrightnessUp      0x1008ff05
 #define XF86LaunchA              0x1008ff4a
 
-static Key keys[] = {
+static const Key keys[] = {
 	/* modifier                     key                     function        argument */
 	/* applications */
 	{ MODKEY,                       XK_space,               spawn,          {.v = dmenucmd } },
@@ -180,7 +179,7 @@ static Key keys[] = {
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static Button buttons[] = {
+static const Button buttons[] = {
 	/* click                mask            button          function        argument */
 	/* layouts */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
