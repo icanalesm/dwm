@@ -64,9 +64,9 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-	"dmenu_run", "-fn", FNT_SANS, "-nb", CLR_NORBG, "-nf", CLR_NORFG,
-	"-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
+	"dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_NORBG, "-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
 };
 static const char *cmd_term[] = {
 	"st", "-e", "/bin/sh", NULL
