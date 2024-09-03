@@ -69,7 +69,7 @@ static const char *dmenucmd[] = {
 	"dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_NORBG, "-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL
 };
 static const char *cmd_term[] = {
-	"st", "-e", "/bin/sh", NULL
+	"st", "-e", "/bin/bash", "--rcfile", "/home/isaac/.config/bash/bashrc", NULL
 };
 static const char *cmd_status[] = {
 	"tstat", "set", NULL
