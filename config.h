@@ -8,7 +8,8 @@
 #define CLR_SELBG    "#005577"
 #define CLR_SELBO    "#005577"
 #define FNT_SANS     "sans:size=10"
-#define FNT_GLYPH    "Font Awesome 5 Free:size=10"
+#define FNT_GLYPH1   "Font Awesome 7 Free:size=10"
+#define FNT_GLYPH2   "Font Awesome 7 Brands:size=10"
 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -16,7 +17,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
 	FNT_SANS,
-	FNT_GLYPH,
+	FNT_GLYPH1,
+	FNT_GLYPH2,
 };
 static const char *colors[][3] = {
 	/*               foreground  background  border   */
