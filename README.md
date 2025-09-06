@@ -6,7 +6,6 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 * [layoutfirst](https://github.com/icanalesm/dwm/tree/layoutfirst)
 * [notitle](https://github.com/icanalesm/dwm/tree/notitle)
 * [fixMemoryLeak](https://github.com/icanalesm/dwm/tree/fixMemoryLeak)
-* [fixCodeStyle](https://github.com/icanalesm/dwm/tree/fixCodeStyle)
 
 ![mydwm](img/mydwm.png)
 
