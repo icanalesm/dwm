@@ -39,11 +39,11 @@ My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the scripts u
 In `config.h`:
 
 * Fonts
-  - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (to get the glyph codes, check the [cheatsheet](https://www.fontawesome.com/cheatsheet))
+  - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (to get the codes, [search icons](https://fontawesome.com/icons))
 * Key bindings
   - `dmenu`: [my fork of dmenu](https://github.com/icanalesm/dmenu)
   - Terminal: [my fork of st](https://github.com/icanalesm/st)
-  - Volume control: [amixer](http://www.alsa-project.org) via [uictl](https://github.com/icanalesm/uictl)
+  - Volume control: `pactl` via [uictl](https://github.com/icanalesm/uictl)
   - Backlight control: [brightctl](https://github.com/icanalesm/brightctl) via [uictl](https://github.com/icanalesm/uictl)
   - Status: [tstat](https://github.com/icanalesm/tstat) via [uictl](https://github.com/icanalesm/uictl)
   - Screenshots: [my script](https://github.com/icanalesm/dotfiles/blob/master/.local/bin/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
