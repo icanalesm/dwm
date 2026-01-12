@@ -12,7 +12,7 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 ## Requirements
 
-In order to build dwm, the libX11, libXft and libXinerama header files are required.
+To build dwm, the libX11, libXft and libXinerama header files are required.
 
 ## Installation
 
@@ -34,18 +34,18 @@ exec dwm
 
 ## My customisation
 
-My [dotfiles repo](https://github.com/icanalesm/dotfiles) contains the scripts used in `config.h`, files for setting terminal colors, default fonts and my `.xinitrc` file, among other things.
+[My dotfiles](https://github.com/icanalesm/dotfiles) contain the scripts used in `config.h`, files for setting terminal colors, default fonts and my `.xinitrc` file, among other things.
 
 In `config.h`:
 
 * Fonts
   - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (to get the codes, [search icons](https://fontawesome.com/icons))
 * Key bindings
-  - `dmenu`: [my fork of dmenu](https://github.com/icanalesm/dmenu)
-  - Terminal: [my fork of st](https://github.com/icanalesm/st)
-  - Volume control: `pactl` via [uictl](https://github.com/icanalesm/uictl)
-  - Backlight control: [brightctl](https://github.com/icanalesm/brightctl) via [uictl](https://github.com/icanalesm/uictl)
-  - Status: [tstat](https://github.com/icanalesm/tstat) via [uictl](https://github.com/icanalesm/uictl)
+  - `dmenu`: [my fork of `dmenu`](https://github.com/icanalesm/dmenu)
+  - Terminal: [my fork of `st`](https://github.com/icanalesm/st)
+  - Volume control: [`wpctl`](https://pipewire.pages.freedesktop.org/wireplumber/tools/wpctl.html) and [dwmui](https://github.com/icanalesm/dwmui)
+  - Backlight control: [`brightnessctl`](https://github.com/Hummer12007/brightnessctl) and [dwmui](https://github.com/icanalesm/dwmui)
+  - Status: [my configuration](https://github.com/icanalesm/dwmui/blob/master/dwmblocks-async/config.h) of [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
   - Screenshots: [my script](https://github.com/icanalesm/dotfiles/blob/master/.local/bin/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
   - Monitor configuration: [my script](https://github.com/icanalesm/dotfiles/blob/master/.local/bin/monctl)
 
@@ -56,10 +56,3 @@ Useful tools for configuration:
 * `xfd` to get the unicode code of characters.
 * `xprop` to get properties of clients for [dwm rules](https://dwm.suckless.org/customisation/rules).
 
-Notice that `tstat` only sets or prints to stdout the status. I manually update the status bar by pressing `MODKEY`+`Shift`+`b`. To automatically update the status, `tstat` can be put in a shell script:
-```
-while true; do
-	tstat set
-	sleep 1
-done
-```
