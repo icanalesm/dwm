@@ -4,9 +4,6 @@
 
 Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with the following patches:
 
-* [tagIndicator](https://github.com/icanalesm/dwm/tree/tagIndicator) (my version of [activetagindicatorbar](https://dwm.suckless.org/patches/activetagindicatorbar))
-* [layoutfirst](https://github.com/icanalesm/dwm/tree/layoutfirst) (my version of [leftlayout](https://dwm.suckless.org/patches/leftlayout))
-* [notitle](https://github.com/icanalesm/dwm/tree/notitle) (my version of [notitle](https://dwm.suckless.org/patches/notitle))
 * [free_fontset](https://github.com/icanalesm/dwm/tree/free_fontset)
 
 
