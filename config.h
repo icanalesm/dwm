@@ -14,6 +14,8 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
+static const int showtitle          = 0;        /* 0 means no title */
+static const int showfloating       = 1;        /* 0 means no floating indicator */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { FNT_SANS, FNT_GLYPH1, FNT_GLYPH2 };
 static const char *colors[][3]      = {

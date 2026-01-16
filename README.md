@@ -4,6 +4,7 @@
 
 Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with the following patches:
 
+* [custombar](https://github.com/icanalesm/dwm/tree/custombar)
 * [free_fontset](https://github.com/icanalesm/dwm/tree/free_fontset)
 
 
