@@ -703,8 +703,8 @@ drawbar(Monitor *m)
 	int x, w, tw = 0;
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
-	int inds = drw->fonts->h / 4;
-	int indh = boxw - 2;
+	int inds = lrpad / 4;
+	int indh = (bh - drw->fonts->h) / 2 + 1;
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
