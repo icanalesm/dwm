@@ -71,6 +71,7 @@ static const Layout layouts[] = {
 	{ "\uf009",   tile },    /* first entry is default */
 	{ "\uf2d2",   NULL },    /* no layout function means floating behavior */
 	{ "\uf2d0",   monocle },
+	{ "\ue80a",   spiral },
 };
 
 /* key definitions */
@@ -105,10 +106,7 @@ static const Key keys[] = {
 	/* modifier                     key                     function        argument */
 	/* applications */
 	{ MODKEY,                       XK_space,               spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return,              spawn,          {.v = termcmd } },
-	/*{ MODKEY|ShiftMask,             XK_s,                   spawn,          {.v = (const char*[]){ "/home/isaac/.scripts/scrshot", NULL } } },*/
-	/*{ MODKEY|ShiftMask,             XK_w,                   spawn,          {.v = (const char*[]){ "/home/isaac/.scripts/scrshot", "window", NULL } } },*/
-	/*{ 0,                            XF86LaunchA,            spawn,          {.v = (const char*[]){ "/home/isaac/.scripts/monctl", NULL } } },*/
+	{ MODKEY,                       XK_Return,              spawn,          {.v = termcmd } },
 	/* volume control */
 	{ 0,                            XF86AudioMute,          spawn,          SHCMD("wpctl set-mute "AUDIO_DEV" toggle && dwmui-adm volume "AUDIO_DEV) },
 	{ 0,                            XF86AudioLowerVolume,   spawn,          SHCMD("wpctl set-volume "AUDIO_DEV" 0.05- && dwmui-adm volume "AUDIO_DEV) },
@@ -121,14 +119,13 @@ static const Key keys[] = {
 	{ 0,                            XF86KbdBrightnessUp,    spawn,          SHCMD("brightnessctl -q -d "KEYBOARD_BACKLIGHT_DEV" set +1 && dwmui-adm backlight "KEYBOARD_BACKLIGHT_DEV) },
 	/* bar */
 	{ MODKEY,                       XK_b,                   togglebar,      {0} },
-	/* status bar */
+	/* bar - status */
 	{ MODKEY|ShiftMask,             XK_b,                   spawn,          {.v = (const char*[]){ "dwmui-adm", "statusbar", NULL } } },
 	/* layouts */
 	{ MODKEY,                       XK_t,                   setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                   setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,                   setlayout,      {.v = &layouts[2]} },
-	/*{ MODKEY,                       XK_space,               setlayout,      {0} },*/
-	/*{ MODKEY|ShiftMask,             XK_space,               togglefloating, {0} },*/
+	{ MODKEY,                       XK_s,                   setlayout,      {.v = &layouts[3]} },
 	/* tags */
 	{ MODKEY,                       XK_Tab,                 view,           {0} },
 	{ MODKEY,                       XK_0,                   view,           {.ui = ~0 } },
@@ -146,8 +143,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,                   setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_j,                   focusstack,     {.i = +1} },
 	{ MODKEY,                       XK_k,                   focusstack,     {.i = -1} },
-	{ MODKEY,                       XK_Return,              zoom,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,                   killclient,     {0} },
+	{ MODKEY,                       XK_z,                   zoom,           {0} },
+	{ MODKEY,                       XK_q,                   killclient,     {0} },
 	/* monitors */
 	{ MODKEY,                       XK_comma,               focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period,              focusmon,       {.i = +1 } },
@@ -156,8 +153,8 @@ static const Key keys[] = {
 	/* gaps */
 	{ MODKEY,                       XK_g,                   togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_g,                   defaultgaps,    {0} },
-	{ MODKEY|ShiftMask,             XK_i,                   incrgaps,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_d,                   incrgaps,       {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_i,                   incrgaps,       {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_d,                   incrgaps,       {.i = -1 } },
 	/* quit */
 	{ MODKEY|ShiftMask,             XK_q,                   quit,           {0} },
 };
