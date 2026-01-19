@@ -6,7 +6,7 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 * [custombar](https://github.com/icanalesm/dwm/tree/custombar)
 * [free_fontset](https://github.com/icanalesm/dwm/tree/free_fontset)
-* [vanitygaps](https://dwm.suckless.org/patches/vanitygaps)
+* [vanitygaps](https://github.com/icanalesm/dwm/tree/vanitygaps) (my version of [vanitygaps](https://dwm.suckless.org/patches/vanitygaps))
 
 
 ## Requirements
