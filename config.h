@@ -24,10 +24,13 @@ static const int showfloating       = 1;        /* 0 means no floating indicator
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { FNT_SANS, FNT_GLYPH1, FNT_GLYPH2 };
 static const char *colors[][3]      = {
-	/*                fg         bg         border   */
-	[SchemeNorm]  = { CLR_NORFG, CLR_NORBG, CLR_NORBO },
-	[SchemeSel]   = { CLR_SELFG, CLR_SELBG, CLR_SELBO },
-	[SchemeTitle] = { CLR_NORFG, CLR_NORBG, CLR_NORBO },
+	/*                  fg         bg         border   */
+	[SchemeNorm]    = { CLR_NORFG, CLR_NORBG, CLR_NORBO },
+	[SchemeSel]     = { CLR_NORFG, CLR_NORBG, CLR_SELBO },
+	[SchemeTagNorm] = { CLR_NORFG, CLR_NORBG, "#000000" },
+	[SchemeTagSel]  = { CLR_SELFG, CLR_SELBG, "#000000" },
+	[SchemeLayout]  = { CLR_NORFG, CLR_NORBG, "#000000" },
+	[SchemeStatus]  = { CLR_NORFG, CLR_NORBG, "#000000" },
 };
 
 /* tagging */
