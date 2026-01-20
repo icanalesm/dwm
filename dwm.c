@@ -740,10 +740,11 @@ drawbar(Monitor *m)
 	if ((w = m->ww - tw - x) > bh) {
 		if (m->sel && showtitle) {
 			tw = TEXTW(m->sel->name);
+			i = (tw > w) ? 0 : (w - tw) / 2;
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-			drw_text(drw, x, 0, w, bh, ((tw > w) ? lrpad : w - tw) / 2, m->sel->name, 0);
+			drw_text(drw, x, 0, w, bh, lrpad / 2 + i, m->sel->name, 0);
 			if (m->sel->isfloating && showfloating)
-				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+				drw_rect(drw, x + i + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
 			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_rect(drw, x, 0, w, bh, 1, 1);
