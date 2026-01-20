@@ -709,10 +709,8 @@ void
 drawbar(Monitor *m)
 {
 	int x, w, tw = 0;
-	int boxs = drw->fonts->h / 9;
-	int boxw = drw->fonts->h / 6 + 2;
-	int inds = lrpad / 4;
-	int indh = (bh - drw->fonts->h) / 2 + 1;
+	int boxs = lrpad / 4;
+	int boxh = (bh - drw->fonts->h) / 2 + 1;
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
@@ -741,7 +739,7 @@ drawbar(Monitor *m)
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeTagSel : SchemeTagNorm]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 		if (occ & 1 << i)
-			drw_rect(drw, x + inds, 0, w - (2 * inds), indh, 1, urg & 1 << i);
+			drw_rect(drw, x + boxs, 0, w - (2 * boxs), boxh, 1, urg & 1 << i);
 		x += w;
 	}
 	/* Draw window title */
@@ -751,8 +749,11 @@ drawbar(Monitor *m)
 			i = (tw > w) ? 0 : (w - tw) / 2;
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, lrpad / 2 + i, m->sel->name, 0);
-			if (m->sel->isfloating && showfloating)
-				drw_rect(drw, x + i + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+			if (m->sel->isfloating && showfloating) {
+				boxs = drw->fonts->h / 9;
+				boxh = drw->fonts->h / 6 + 2;
+				drw_rect(drw, x + i + boxs, boxs, boxh, boxh, m->sel->isfixed, 0);
+			}
 		} else {
 			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_rect(drw, x, 0, w, bh, 1, 1);
