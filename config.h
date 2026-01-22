@@ -1,29 +1,27 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-#define CLR_NORFG    "#BBBBBB"
-#define CLR_NORBG    "#222222"
-#define CLR_NORBO    "#444444"
-#define CLR_SELFG    "#EEEEEE"
-#define CLR_SELBG    "#005577"
-#define CLR_SELBO    "#005577"
-#define FNT_SANS     "sans:size=10"
-#define FNT_GLYPH1   "Font Awesome 7 Free:size=10"
-#define FNT_GLYPH2   "Font Awesome 7 Brands:size=10"
+#define CLR_WHITE     "#D8D8D8"
+#define CLR_BLACK     "#181818"
+#define CLR_GREY      "#444444"
+#define CLR_SEL       "#005577"
+#define FNT_SANS      "sans:size=10"
+#define FNT_GLYPH1    "Font Awesome 7 Free:size=10"
+#define FNT_GLYPH2    "Font Awesome 7 Brands:size=10"
 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
+static const unsigned int gappih    = 8;        /* horiz inner gap between windows */
+static const unsigned int gappiv    = 8;        /* vert inner gap between windows */
+static const unsigned int gappoh    = 8;        /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 8;        /* vert outer gap between windows and screen edge */
+static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int barlpad            = 5;        /* bar left padding */
-static const int barrpad            = 5;        /* bar right padding */
-static const int bartpad            = 5;        /* bar top padding */
-static const int barbpad            = 5;        /* bar bottom padding */
+static const int barlpad            = 8;        /* bar left padding */
+static const int barrpad            = 8;        /* bar right padding */
+static const int bartpad            = 8;        /* bar top padding */
+static const int barbpad            = 0;        /* bar bottom padding */
 static const int baripad            = 0;        /* padding between bar sections */
 static const int barsechpad         = 7;        /* bar section horizontal padding */
 static const int barsecvpad         = 1;        /* bar section vertical padding */
@@ -32,12 +30,12 @@ static const int showfloating       = 1;        /* 0 means no floating indicator
 static const char *fonts[]          = { FNT_SANS, FNT_GLYPH1, FNT_GLYPH2 };
 static const char *colors[][3]      = {
 	/*                  fg         bg         border   */
-	[SchemeNorm]    = { CLR_NORFG, CLR_NORBG, CLR_NORBO },
-	[SchemeSel]     = { CLR_NORFG, CLR_NORBG, CLR_SELBO },
-	[SchemeTagNorm] = { CLR_NORFG, CLR_NORBG, "#000000" },
-	[SchemeTagSel]  = { CLR_SELFG, CLR_SELBG, "#000000" },
-	[SchemeLayout]  = { CLR_NORFG, CLR_NORBG, "#000000" },
-	[SchemeStatus]  = { CLR_NORFG, CLR_NORBG, "#000000" },
+	[SchemeNorm]    = { CLR_WHITE, CLR_BLACK, CLR_GREY  },
+	[SchemeSel]     = { CLR_WHITE, CLR_BLACK, CLR_SEL   },
+	[SchemeTagNorm] = { CLR_WHITE, CLR_BLACK, "#000000" },
+	[SchemeTagSel]  = { CLR_WHITE, CLR_SEL,   "#000000" },
+	[SchemeLayout]  = { CLR_WHITE, CLR_BLACK, "#000000" },
+	[SchemeStatus]  = { CLR_WHITE, CLR_BLACK, "#000000" },
 };
 
 /* tagging */
@@ -110,7 +108,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_NORBG, "-nf", CLR_NORFG, "-sb", CLR_SELBG, "-sf", CLR_SELFG, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_BLACK, "-nf", CLR_WHITE, "-sb", CLR_SEL, "-sf", CLR_WHITE, NULL };
 static const char *termcmd[]  = { "st", "-e", "/bin/bash", "--rcfile", "/home/isaac/.config/bash/bashrc", NULL };
 
 static const Key keys[] = {
