@@ -431,8 +431,7 @@ buttonpress(XEvent *e)
 		selmon = m;
 		focus(NULL);
 	}
-	i = barlpad <= ev->x && ev->x < selmon->ww - barrpad
-	    && m->by + bartpad <= ev->y && ev->y < m->by + bh - barbpad;
+	i = barlpad <= ev->x && ev->x < selmon->ww - barrpad && bartpad <= ev->y && ev->y < bh - barbpad;
 	if (ev->window == selmon->barwin && i) {
 		x = barlpad + TEXTW(selmon->ltsymbol);
 		if (ev->x < x) {
