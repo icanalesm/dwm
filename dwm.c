@@ -262,6 +262,7 @@ static Atom wmatom[WMLast], netatom[NetLast];
 static int running = 1;
 static Cur *cursor[CurLast];
 static Clr **scheme;
+static Clr barbg;
 static Display *dpy;
 static Drw *drw;
 static Monitor *mons, *selmon;
@@ -493,6 +494,7 @@ cleanup(void)
 	for (i = 0; i < LENGTH(colors); i++)
 		drw_scm_free(drw, scheme[i], 3);
 	free(scheme);
+	drw_clr_free(drw, &barbg);
 	XDestroyWindow(dpy, wmcheckwin);
 	drw_free(drw);
 	XSync(dpy, False);
@@ -714,6 +716,9 @@ drawbar(Monitor *m)
 	if (!m->showbar)
 		return;
 
+	/* Draw background */
+	XSetForeground(drw->dpy, drw->gc, barbg.pixel);
+	XFillRectangle(drw->dpy, drw->drawable, drw->gc, 0, 0, m->ww, bh);
 	/* Draw status */
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		w = TEXTW(stext);
@@ -1601,6 +1606,7 @@ setup(void)
 	scheme = ecalloc(LENGTH(colors), sizeof(Clr *));
 	for (i = 0; i < LENGTH(colors); i++)
 		scheme[i] = drw_scm_create(drw, colors[i], 3);
+	drw_clr_create(drw, &barbg, barbgcol);
 	/* init bars */
 	updatebars();
 	updatestatus();
