@@ -420,7 +420,7 @@ attachstack(Client *c)
 void
 buttonpress(XEvent *e)
 {
-	unsigned int i, x, click;
+	unsigned int i, x, xr, click;
 	Arg arg = {0};
 	Client *c;
 	Monitor *m;
@@ -433,21 +433,23 @@ buttonpress(XEvent *e)
 		selmon = m;
 		focus(NULL);
 	}
-	if (ev->window == selmon->barwin) {
-		i = 0;
-		x = TEXTW(selmon->ltsymbol);
+	i = barlpad <= ev->x && ev->x < selmon->ww - barrpad
+	    && m->by + bartpad <= ev->y && ev->y < m->by + bh - barbpad;
+	if (ev->window == selmon->barwin && i) {
+		x = barlpad + TEXTW(selmon->ltsymbol);
 		if (ev->x < x) {
 			click = ClkLtSymbol;
-		} else {
+		} else if ((x += baripad) <= ev->x) {
+			i = 0;
 			do
 				x += TEXTW(tags[i]);
 			while (ev->x >= x && ++i < LENGTH(tags));
 			if (i < LENGTH(tags)) {
 				click = ClkTagBar;
 				arg.ui = 1 << i;
-			} else if (ev->x > selmon->ww - (int)TEXTW(stext))
+			} else if ((xr = selmon->ww - barrpad - TEXTW(stext)) <= ev->x )
 				click = ClkStatusText;
-			else if (showtitle)
+			else if (x + baripad <= ev->x && ev->x < xr - baripad && showtitle)
 				click = ClkWinTitle;
 		}
 	} else if ((c = wintoclient(ev->window))) {
@@ -708,26 +710,30 @@ dirtomon(int dir)
 void
 drawbar(Monitor *m)
 {
-	int x, w, tw = 0;
+	int w, tw;
+	int h = bh - bartpad - barbpad;
+	int x = barlpad;
+	int xr = m->ww - barrpad;
 	int boxs = lrpad / 4;
-	int boxh = (bh - drw->fonts->h) / 2 + 1;
+	int boxh = barsecvpad + 1;
 	unsigned int i, occ = 0, urg = 0;
 	Client *c;
 
 	if (!m->showbar)
 		return;
 
-	/* Draw status first so it can be overdrawn by tags later */
+	/* Draw status */
 	if (m == selmon) { /* status is only drawn on selected monitor */
+		w = TEXTW(stext);
 		drw_setscheme(drw, scheme[SchemeStatus]);
-		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
+		drw_text(drw, xr - w, bartpad, w, h, barsechpad, stext, 0);
+		xr -= w + baripad;
 	}
 	/* Draw layout symbol */
-	x = 0;
 	w = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeLayout]);
-	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
+	drw_text(drw, x, bartpad, w, h, barsechpad, m->ltsymbol, 0);
+	x += w + baripad;
 	/* Draw tags */
 	for (c = m->clients; c; c = c->next) {
 		occ |= c->tags;
@@ -737,26 +743,27 @@ drawbar(Monitor *m)
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeTagSel : SchemeTagNorm]);
-		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+		drw_text(drw, x, bartpad, w, h, barsechpad, tags[i], urg & 1 << i);
 		if (occ & 1 << i)
-			drw_rect(drw, x + boxs, 0, w - (2 * boxs), boxh, 1, urg & 1 << i);
+			drw_rect(drw, x + boxs, bartpad, w - (2 * boxs), boxh, 1, urg & 1 << i);
 		x += w;
 	}
+	x += baripad;
 	/* Draw window title */
-	if ((w = m->ww - tw - x) > bh) {
+	if ((w = xr - x) > lrpad) {
 		if (m->sel && showtitle) {
 			tw = TEXTW(m->sel->name);
 			i = (tw > w) ? 0 : (w - tw) / 2;
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-			drw_text(drw, x, 0, w, bh, lrpad / 2 + i, m->sel->name, 0);
+			drw_text(drw, x, bartpad, w, h, lrpad / 2 + i, m->sel->name, 0);
 			if (m->sel->isfloating && showfloating) {
 				boxs = drw->fonts->h / 9;
 				boxh = drw->fonts->h / 6 + 2;
-				drw_rect(drw, x + i + boxs, boxs, boxh, boxh, m->sel->isfixed, 0);
+				drw_rect(drw, x + i + boxs, boxs + bartpad, boxh, boxh, m->sel->isfixed, 0);
 			}
 		} else {
 			drw_setscheme(drw, scheme[SchemeNorm]);
-			drw_rect(drw, x, 0, w, bh, 1, 1);
+			drw_rect(drw, x, bartpad, w, h, 1, 1);
 		}
 	}
 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
@@ -1584,8 +1591,8 @@ setup(void)
 	drw = drw_create(dpy, screen, root, sw, sh);
 	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
-	lrpad = drw->fonts->h;
-	bh = drw->fonts->h + 2;
+	lrpad = 2 * barsechpad;
+	bh = drw->fonts->h + 2 * barsecvpad + bartpad + barbpad;
 	updategeom();
 	/* init atoms */
 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);

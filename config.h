@@ -19,9 +19,16 @@ static const unsigned int gappoh    = 10;       /* horiz outer gap between windo
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
+static const int barlpad            = 5;        /* bar left padding */
+static const int barrpad            = 5;        /* bar right padding */
+static const int bartpad            = 5;        /* bar top padding */
+static const int barbpad            = 5;        /* bar bottom padding */
+static const int baripad            = 0;        /* padding between bar sections */
+static const int barsechpad         = 7;        /* bar section horizontal padding */
+static const int barsecvpad         = 1;        /* bar section vertical padding */
 static const int showtitle          = 0;        /* 0 means no title */
 static const int showfloating       = 1;        /* 0 means no floating indicator */
-static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { FNT_SANS, FNT_GLYPH1, FNT_GLYPH2 };
 static const char *colors[][3]      = {
 	/*                  fg         bg         border   */
