@@ -1,9 +1,9 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-#define CLR_WHITE     "#D8D8D8"
-#define CLR_BLACK     "#181818"
-#define CLR_GREY      "#444444"
+#define CLR_GREY1     "#181818"
+#define CLR_GREY2     "#444444"
+#define CLR_WHITE1    "#D8D8D8"
 #define CLR_SEL       "#005577"
 #define FNT_SANS      "sans:size=10"
 #define FNT_GLYPH1    "Font Awesome 7 Free:size=10"
@@ -18,24 +18,25 @@ static const unsigned int gappov    = 8;        /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int barlpad            = 8;        /* bar left padding */
-static const int barrpad            = 8;        /* bar right padding */
-static const int bartpad            = 8;        /* bar top padding */
+static const int barlpad            = 0;        /* bar left padding */
+static const int barrpad            = 0;        /* bar right padding */
+static const int bartpad            = 0;        /* bar top padding */
 static const int barbpad            = 0;        /* bar bottom padding */
 static const int baripad            = 0;        /* padding between bar sections */
-static const int barsechpad         = 7;        /* bar section horizontal padding */
+static const int barsechpad         = 8;        /* bar section horizontal padding */
 static const int barsecvpad         = 1;        /* bar section vertical padding */
 static const int showtitle          = 0;        /* 0 means no title */
 static const int showfloating       = 1;        /* 0 means no floating indicator */
 static const char *fonts[]          = { FNT_SANS, FNT_GLYPH1, FNT_GLYPH2 };
+static const char *barbgcol         = CLR_GREY1;
 static const char *colors[][3]      = {
-	/*                  fg         bg         border   */
-	[SchemeNorm]    = { CLR_WHITE, CLR_BLACK, CLR_GREY  },
-	[SchemeSel]     = { CLR_WHITE, CLR_BLACK, CLR_SEL   },
-	[SchemeTagNorm] = { CLR_WHITE, CLR_BLACK, "#000000" },
-	[SchemeTagSel]  = { CLR_WHITE, CLR_SEL,   "#000000" },
-	[SchemeLayout]  = { CLR_WHITE, CLR_BLACK, "#000000" },
-	[SchemeStatus]  = { CLR_WHITE, CLR_BLACK, "#000000" },
+	/*                  fg          bg         border   */
+	[SchemeNorm]    = { CLR_WHITE1, CLR_GREY1, CLR_GREY2 },
+	[SchemeSel]     = { CLR_WHITE1, CLR_GREY1, CLR_SEL   },
+	[SchemeTagNorm] = { CLR_WHITE1, CLR_GREY1, "#000000" },
+	[SchemeTagSel]  = { CLR_WHITE1, CLR_SEL,   "#000000" },
+	[SchemeLayout]  = { CLR_WHITE1, CLR_GREY1, "#000000" },
+	[SchemeStatus]  = { CLR_WHITE1, CLR_GREY1, "#000000" },
 };
 
 /* tagging */
@@ -108,7 +109,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_BLACK, "-nf", CLR_WHITE, "-sb", CLR_SEL, "-sf", CLR_WHITE, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_GREY1, "-nf", CLR_WHITE1, "-sb", CLR_SEL, "-sf", CLR_WHITE1, NULL };
 static const char *termcmd[]  = { "st", "-e", "/bin/bash", "--rcfile", "/home/isaac/.config/bash/bashrc", NULL };
 
 static const Key keys[] = {
