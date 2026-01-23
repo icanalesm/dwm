@@ -418,7 +418,7 @@ attachstack(Client *c)
 void
 buttonpress(XEvent *e)
 {
-	unsigned int i, x, xr, click;
+	unsigned int i, x, x1, click;
 	Arg arg = {0};
 	Client *c;
 	Monitor *m;
@@ -437,16 +437,20 @@ buttonpress(XEvent *e)
 		if (ev->x < x) {
 			click = ClkLtSymbol;
 		} else if ((x += baripad) <= ev->x) {
+			x -= bartagpad;
 			i = 0;
-			do
-				x += TEXTW(tags[i]);
-			while (ev->x >= x && ++i < LENGTH(tags));
+			do {
+				x1 = x + bartagpad;
+				x = x1 + TEXTW(tags[i]);
+			} while (ev->x >= x && ++i < LENGTH(tags));
 			if (i < LENGTH(tags)) {
-				click = ClkTagBar;
-				arg.ui = 1 << i;
-			} else if ((xr = selmon->ww - barrpad - TEXTW(stext)) <= ev->x )
+				if (x1 <= ev->x) {
+					click = ClkTagBar;
+					arg.ui = 1 << i;
+				}
+			} else if ((x1 = selmon->ww - barrpad - TEXTW(stext)) <= ev->x)
 				click = ClkStatusText;
-			else if (x + baripad <= ev->x && ev->x < xr - baripad && showtitle)
+			else if (x + baripad <= ev->x && ev->x < x1 - baripad && showtitle)
 				click = ClkWinTitle;
 		}
 	} else if ((c = wintoclient(ev->window))) {
@@ -742,9 +746,9 @@ drawbar(Monitor *m)
 		drw_text(drw, x, bartpad, w, h, barsechpad, tags[i], urg & 1 << i);
 		if (occ & 1 << i)
 			drw_rect(drw, x + boxs, bartpad, w - (2 * boxs), boxh, 1, urg & 1 << i);
-		x += w;
+		x += w + bartagpad;
 	}
-	x += baripad;
+	x += baripad - bartagpad;
 	/* Draw window title */
 	if ((w = xr - x) > lrpad) {
 		if (m->sel && showtitle) {
