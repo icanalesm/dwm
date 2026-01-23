@@ -23,6 +23,7 @@ static const int barrpad            = 0;        /* bar right padding */
 static const int bartpad            = 0;        /* bar top padding */
 static const int barbpad            = 0;        /* bar bottom padding */
 static const int baripad            = 0;        /* padding between bar sections */
+static const int bartagpad          = 0;        /* padding between tags */
 static const int barsechpad         = 8;        /* bar section horizontal padding */
 static const int barsecvpad         = 1;        /* bar section vertical padding */
 static const int showtitle          = 0;        /* 0 means no title */
