@@ -1,15 +1,19 @@
 /* Key binding functions */
 static void defaultgaps(const Arg *arg);
 static void incrgaps(const Arg *arg);
+#if 0
 static void incrigaps(const Arg *arg);
 static void incrogaps(const Arg *arg);
 static void incrohgaps(const Arg *arg);
 static void incrovgaps(const Arg *arg);
 static void incrihgaps(const Arg *arg);
 static void incrivgaps(const Arg *arg);
+#endif
 static void togglegaps(const Arg *arg);
 /* Layouts (delete the ones you do not need) */
+#if 0
 static void dwindle(Monitor *m);
+#endif
 static void fibonacci(Monitor *m, int s);
 static void spiral(Monitor *m);
 static void tile(Monitor *m);
@@ -66,6 +70,7 @@ incrgaps(const Arg *arg)
 	);
 }
 
+#if 0
 void
 incrigaps(const Arg *arg)
 {
@@ -131,6 +136,7 @@ incrivgaps(const Arg *arg)
 		selmon->gappiv + arg->i
 	);
 }
+#endif
 
 void
 getgaps(Monitor *m, int *oh, int *ov, int *ih, int *iv, unsigned int *nc)
@@ -274,11 +280,13 @@ fibonacci(Monitor *m, int s)
 	}
 }
 
+#if 0
 void
 dwindle(Monitor *m)
 {
 	fibonacci(m, 1);
 }
+#endif
 
 void
 spiral(Monitor *m)
