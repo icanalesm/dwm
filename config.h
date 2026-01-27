@@ -111,7 +111,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-h", "26", "-m", dmenumon, "-fn", FNT_SANS, "-nb", CLR_GREY1, "-nf", CLR_WHITE1, "-sb", CLR_SEL, "-sf", CLR_WHITE1, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-h", "20", "-y", "5", "-fn", FNT_SANS, "-nb", CLR_GREY1, "-nf", CLR_WHITE1, "-sb", CLR_SEL, "-sf", CLR_WHITE1, NULL };
 static const char *termcmd[]  = { "st", "-e", "/bin/bash", "--rcfile", "/home/isaac/.config/bash/bashrc", NULL };
 
 static const Key keys[] = {
