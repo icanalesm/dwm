@@ -5,7 +5,6 @@
 Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with the following patches:
 
 * [custombar](https://github.com/icanalesm/dwm/tree/custombar)
-* [free_fontset](https://github.com/icanalesm/dwm/tree/free_fontset)
 * [noborder](https://github.com/icanalesm/dwm/tree/noborder) (my branch with [noborder](https://dwm.suckless.org/patches/noborder))
 * [vanitygaps](https://github.com/icanalesm/dwm/tree/vanitygaps) (my version of [vanitygaps](https://dwm.suckless.org/patches/vanitygaps))
 

@@ -501,7 +501,6 @@ cleanup(void)
 		drw_scm_free(drw, scheme[i], 3);
 	free(scheme);
 	drw_clr_free(drw, &barbg);
-	drw_fontset_free(drw->fonts);
 	XDestroyWindow(dpy, wmcheckwin);
 	drw_free(drw);
 	XSync(dpy, False);
