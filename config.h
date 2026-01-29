@@ -30,15 +30,15 @@ static const int barsecvpad         = 1;        /* bar section vertical padding 
 static const int showtitle          = 0;        /* 0 means no title */
 static const int showfloating       = 1;        /* 0 means no floating indicator */
 static const char *fonts[]          = { FNT_SANS, FNT_GLYPH1, FNT_GLYPH2 };
-static const char *barbgcol         = CLR_GREY1;
+static const char *colorbarbg       = CLR_GREY1;
 static const char *colors[][3]      = {
 	/*                  fg          bg         border   */
 	[SchemeNorm]    = { CLR_WHITE1, CLR_GREY1, CLR_GREY3 },
 	[SchemeSel]     = { CLR_WHITE1, CLR_GREY1, CLR_SEL   },
-	[SchemeTagNorm] = { CLR_WHITE1, CLR_GREY2, "#000000" },
-	[SchemeTagSel]  = { CLR_WHITE1, CLR_SEL,   "#000000" },
-	[SchemeLayout]  = { CLR_WHITE1, CLR_GREY1, "#000000" },
-	[SchemeStatus]  = { CLR_WHITE1, CLR_GREY1, "#000000" },
+	[SchemeTagNorm] = { CLR_WHITE1, CLR_GREY2, NULL },
+	[SchemeTagSel]  = { CLR_WHITE1, CLR_SEL,   NULL },
+	[SchemeLayout]  = { CLR_WHITE1, CLR_GREY1, NULL },
+	[SchemeStatus]  = { CLR_WHITE1, CLR_GREY1, NULL },
 };
 
 /* tagging */
