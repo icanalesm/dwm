@@ -4,7 +4,8 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int showtitle          = 1;        /* 0 means no title */
+static const int showfloating       = 1;        /* 0 means no floating indicator */
 static const int barlpad            = 0;        /* bar left padding */
 static const int barrpad            = 0;        /* bar right padding */
 static const int bartpad            = 0;        /* bar top padding */
@@ -13,8 +14,7 @@ static const int baripad            = 0;        /* padding between bar sections 
 static const int bartagpad          = 0;        /* padding between tags */
 static const int barsechpad         = 7;        /* bar section horizontal padding */
 static const int barsecvpad         = 1;        /* bar section vertical padding */
-static const int showtitle          = 1;        /* 0 means no title */
-static const int showfloating       = 1;        /* 0 means no floating indicator */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
