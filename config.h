@@ -1,15 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-#define CLR_GREY1     "#181818"
-#define CLR_GREY2     "#282828"
-#define CLR_GREY3     "#444444"
-#define CLR_WHITE1    "#D8D8D8"
-#define CLR_SEL       "#005577"
-#define FNT_SANS      "sans:size=10"
-#define FNT_GLYPH1    "Font Awesome 7 Free:size=10"
-#define FNT_GLYPH2    "Font Awesome 7 Brands:size=10"
-
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 8;        /* horiz inner gap between windows */
@@ -18,7 +9,8 @@ static const unsigned int gappoh    = 8;        /* horiz outer gap between windo
 static const unsigned int gappov    = 8;        /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int showtitle          = 0;        /* 0 means no title */
+static const int showfloating       = 1;        /* 0 means no floating indicator */
 static const int barlpad            = 5;        /* bar left padding */
 static const int barrpad            = 5;        /* bar right padding */
 static const int bartpad            = 5;        /* bar top padding */
@@ -27,18 +19,23 @@ static const int baripad            = 5;        /* padding between bar sections 
 static const int bartagpad          = 5;        /* padding between tags */
 static const int barsechpad         = 8;        /* bar section horizontal padding */
 static const int barsecvpad         = 1;        /* bar section vertical padding */
-static const int showtitle          = 0;        /* 0 means no title */
-static const int showfloating       = 1;        /* 0 means no floating indicator */
-static const char *fonts[]          = { FNT_SANS, FNT_GLYPH1, FNT_GLYPH2 };
-static const char *colorbarbg       = CLR_GREY1;
+static const int topbar             = 1;        /* 0 means bottom bar */
+static const char fnt_sans[]        = "sans:size=10";
+static const char *fonts[]          = { fnt_sans, "Font Awesome 7 Free:size=10", "Font Awesome 7 Brands:size=10" };
+static const char col_grey1[]       = "#181818";
+static const char col_grey2[]       = "#282828";
+static const char col_grey3[]       = "#444444";
+static const char col_white1[]      = "#D8D8D8";
+static const char col_sel[]         = "#005577";
+static const char *colorbarbg       = col_grey1;
 static const char *colors[][3]      = {
 	/*                  fg          bg         border   */
-	[SchemeNorm]    = { CLR_WHITE1, CLR_GREY1, CLR_GREY3 },
-	[SchemeSel]     = { CLR_WHITE1, CLR_GREY1, CLR_SEL   },
-	[SchemeTagNorm] = { CLR_WHITE1, CLR_GREY2, NULL },
-	[SchemeTagSel]  = { CLR_WHITE1, CLR_SEL,   NULL },
-	[SchemeLayout]  = { CLR_WHITE1, CLR_GREY1, NULL },
-	[SchemeStatus]  = { CLR_WHITE1, CLR_GREY1, NULL },
+	[SchemeNorm]    = { col_white1, col_grey1, col_grey3 },
+	[SchemeSel]     = { col_white1, col_grey1, col_sel   },
+	[SchemeTagNorm] = { col_white1, col_grey2, NULL },
+	[SchemeTagSel]  = { col_white1, col_sel,   NULL },
+	[SchemeLayout]  = { col_white1, col_grey1, NULL },
+	[SchemeStatus]  = { col_white1, col_grey1, NULL },
 };
 
 /* tagging */
@@ -111,7 +108,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-h", "20", "-y", "5", "-fn", FNT_SANS, "-nb", CLR_GREY1, "-nf", CLR_WHITE1, "-sb", CLR_SEL, "-sf", CLR_WHITE1, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-h", "20", "-y", "5", "-fn", fnt_sans, "-nb", col_grey1, "-nf", col_white1, "-sb", col_sel, "-sf", col_white1, NULL };
 static const char *termcmd[]  = { "st", "-e", "/bin/bash", "--rcfile", "/home/isaac/.config/bash/bashrc", NULL };
 
 static const Key keys[] = {
