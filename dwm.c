@@ -495,7 +495,7 @@ cleanup(void)
 	for (i = 0; i < CurLast; i++)
 		drw_cur_free(drw, cursor[i]);
 	for (i = 0; i < LENGTH(colors); i++)
-		drw_scm_free(drw, scheme[i], 3);
+		drw_scm_free(drw, scheme[i], colors[i][2] ? 3 : 2);
 	free(scheme);
 	drw_clr_free(drw, &barbg);
 	XDestroyWindow(dpy, wmcheckwin);
@@ -1608,7 +1608,7 @@ setup(void)
 	/* init appearance */
 	scheme = ecalloc(LENGTH(colors), sizeof(Clr *));
 	for (i = 0; i < LENGTH(colors); i++)
-		scheme[i] = drw_scm_create(drw, colors[i], 3);
+		scheme[i] = drw_scm_create(drw, colors[i], colors[i][2] ? 3 : 2);
 	drw_clr_create(drw, &barbg, barbgcol);
 	/* init bars */
 	updatebars();
