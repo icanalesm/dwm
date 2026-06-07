@@ -11,7 +11,7 @@ Forked from [https://git.suckless.org/dwm/](https://git.suckless.org/dwm/) with 
 
 ## Requirements
 
-To build dwm, the libX11, libXft and libXinerama header files are required.
+To build dwm, the libX11 and libXft header files are required.
 
 ## Installation
 
