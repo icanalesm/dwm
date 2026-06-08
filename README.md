@@ -40,10 +40,10 @@ In `config.h`:
 * Fonts
   - Tags and layout: [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (to get the codes, [search icons](https://fontawesome.com/icons))
 * Key bindings
-  - `dmenu`: [my fork of `dmenu`](https://github.com/icanalesm/dmenu)
-  - Terminal: [my fork of `st`](https://github.com/icanalesm/st)
-  - Volume control: [`wpctl`](https://pipewire.pages.freedesktop.org/wireplumber/tools/wpctl.html) and [dwmui](https://github.com/icanalesm/dwmui)
-  - Backlight control: [`brightnessctl`](https://github.com/Hummer12007/brightnessctl) and [dwmui](https://github.com/icanalesm/dwmui)
+  - dmenu: [my fork of dmenu](https://github.com/icanalesm/dmenu)
+  - Terminal: [my fork of st](https://github.com/icanalesm/st)
+  - Volume control: [`wpctl`](https://pipewire.pages.freedesktop.org/wireplumber/tools/wpctl.html)([wireplumber](https://pipewire.pages.freedesktop.org/wireplumber)) and [dwmui](https://github.com/icanalesm/dwmui)
+  - Backlight control: [brightnessctl](https://github.com/Hummer12007/brightnessctl) and [dwmui](https://github.com/icanalesm/dwmui)
   - Status: [my configuration](https://github.com/icanalesm/dwmui/blob/master/dwmblocks-async/config.h) of [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
   - Screenshots: [my script](https://github.com/icanalesm/dotfiles/blob/master/.local/bin/scrshot) (requires [ImageMagick](https://www.imagemagick.org/))
   - Monitor configuration: [my script](https://github.com/icanalesm/dotfiles/blob/master/.local/bin/monctl)
